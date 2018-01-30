@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Net.Sockets;
 using System.Net.NetworkInformation;
+using System.Net;
 
 
 
@@ -25,6 +26,8 @@ namespace ICMP_PING
             InitializeComponent();
         }
         CancellationTokenSource cts;
+
+
         
         
 
@@ -88,6 +91,71 @@ namespace ICMP_PING
             {
                 cts.Cancel();
             }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var LanScanner = new LanScanner();
+            Console.WriteLine(LanScanner.DetermineCompName("192.168.0.8"));
+            Console.WriteLine(LanScanner.GetMACAddressFromARP("192.168.0.8"));
+
+            
+        }
+
+        private async void lanStartScan_Click(object sender, EventArgs e)
+        {
+            string fromIP = (FROMiptextbox1.Text + "." + FROMiptextbox2.Text + "." + FROMiptextbox3.Text + ".");
+            string toIP = (TOiptextbox1.Text + "." + TOiptextbox2.Text + "." + TOiptextbox3.Text + "." + TOiptextbox4.Text);
+            
+            int startIP = Convert.ToInt32(FROMiptextbox4.Text);
+            int finishIP = Convert.ToInt32(TOiptextbox4.Text);
+
+            while (startIP < finishIP)
+            {                
+                ListViewItem list = new ListViewItem();
+                var LanScanner = new LanScanner();
+                string currentDomain = (fromIP + (startIP.ToString()));
+
+                Console.WriteLine(currentDomain);
+                string[] result = await LanScanner.info(currentDomain);                
+
+                var testResult = result[0];
+
+                if (testResult != "")
+                {
+                    
+
+                    list.Text = currentDomain;
+                    for (int count = 1; count <= 3; count++)
+                    {
+                        list.SubItems.Add(result[count]);
+                    }
+                    lanDataViewList.Items.Add(list);
+                    lanDataViewList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                    lanDataViewList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    startIP++;
+
+                }
+                else
+                {
+                    startIP++;
+                    
+                    
+                }
+                
+
+
+
+            }
+
+
+            
+
         }
     }
 }
