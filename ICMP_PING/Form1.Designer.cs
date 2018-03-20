@@ -31,7 +31,6 @@
             this.connectButton = new System.Windows.Forms.Button();
             this.domainTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.canceAsyncPingButton = new System.Windows.Forms.Button();
             this.batchPingGroupBox = new System.Windows.Forms.GroupBox();
             this.batchPingLabel = new System.Windows.Forms.Label();
             this.batchButton = new System.Windows.Forms.Button();
@@ -45,35 +44,55 @@
             this.ttlHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.fragmentHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bufferlengthHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.batchProgressBar = new System.Windows.Forms.ProgressBar();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lanDataViewList = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lanStartScan = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.FROMiptextbox1 = new System.Windows.Forms.TextBox();
-            this.FROMiptextbox2 = new System.Windows.Forms.TextBox();
-            this.FROMiptextbox3 = new System.Windows.Forms.TextBox();
-            this.FROMiptextbox4 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.TOiptextbox4 = new System.Windows.Forms.TextBox();
             this.TOiptextbox1 = new System.Windows.Forms.TextBox();
             this.TOiptextbox3 = new System.Windows.Forms.TextBox();
             this.TOiptextbox2 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.FROMiptextbox4 = new System.Windows.Forms.TextBox();
+            this.FROMiptextbox1 = new System.Windows.Forms.TextBox();
+            this.FROMiptextbox3 = new System.Windows.Forms.TextBox();
+            this.FROMiptextbox2 = new System.Windows.Forms.TextBox();
+            this.lanStartScan = new System.Windows.Forms.Button();
+            this.lanDataViewList = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.batchProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scan_button = new System.Windows.Forms.Button();
+            this.LanScannerIPV4Textbox = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.batchPingGroupBox.SuspendLayout();
             this.singlePingGroupBox.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // connectButton
@@ -95,25 +114,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.canceAsyncPingButton);
             this.groupBox1.Controls.Add(this.batchPingGroupBox);
             this.groupBox1.Controls.Add(this.singlePingGroupBox);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(181, 434);
+            this.groupBox1.Size = new System.Drawing.Size(181, 399);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ping ";
-            // 
-            // canceAsyncPingButton
-            // 
-            this.canceAsyncPingButton.Location = new System.Drawing.Point(55, 294);
-            this.canceAsyncPingButton.Name = "canceAsyncPingButton";
-            this.canceAsyncPingButton.Size = new System.Drawing.Size(75, 23);
-            this.canceAsyncPingButton.TabIndex = 8;
-            this.canceAsyncPingButton.Text = "Cancel Ping";
-            this.canceAsyncPingButton.UseVisualStyleBackColor = true;
-            this.canceAsyncPingButton.Click += new System.EventHandler(this.canceAsyncPingButton_Click);
             // 
             // batchPingGroupBox
             // 
@@ -182,7 +190,7 @@
             this.bufferlengthHeader});
             this.dataViewList.Location = new System.Drawing.Point(190, 3);
             this.dataViewList.Name = "dataViewList";
-            this.dataViewList.Size = new System.Drawing.Size(595, 405);
+            this.dataViewList.Size = new System.Drawing.Size(595, 398);
             this.dataViewList.TabIndex = 3;
             this.dataViewList.UseCompatibleStateImageBehavior = false;
             this.dataViewList.View = System.Windows.Forms.View.Details;
@@ -219,32 +227,26 @@
             this.bufferlengthHeader.Text = "Buffer Length";
             this.bufferlengthHeader.Width = 79;
             // 
-            // batchProgressBar
-            // 
-            this.batchProgressBar.Location = new System.Drawing.Point(190, 414);
-            this.batchProgressBar.Name = "batchProgressBar";
-            this.batchProgressBar.Size = new System.Drawing.Size(595, 23);
-            this.batchProgressBar.TabIndex = 5;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(3, 3);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(799, 470);
+            this.tabControl1.Size = new System.Drawing.Size(799, 433);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.batchProgressBar);
             this.tabPage1.Controls.Add(this.dataViewList);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(791, 444);
+            this.tabPage1.Size = new System.Drawing.Size(791, 407);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Batch Ping";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -252,114 +254,20 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Controls.Add(this.LanScannerIPV4Textbox);
+            this.tabPage2.Controls.Add(this.scan_button);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.lanStartScan);
             this.tabPage2.Controls.Add(this.lanDataViewList);
-            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(791, 444);
+            this.tabPage2.Size = new System.Drawing.Size(791, 407);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "LAN Scanner";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(574, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lanDataViewList
-            // 
-            this.lanDataViewList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lanDataViewList.Location = new System.Drawing.Point(95, 124);
-            this.lanDataViewList.Name = "lanDataViewList";
-            this.lanDataViewList.Size = new System.Drawing.Size(660, 304);
-            this.lanDataViewList.TabIndex = 4;
-            this.lanDataViewList.UseCompatibleStateImageBehavior = false;
-            this.lanDataViewList.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Tag = "Domain";
-            this.columnHeader1.Text = "IP Address";
-            this.columnHeader1.Width = 67;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "MAC Address";
-            this.columnHeader2.Width = 102;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Response Time";
-            this.columnHeader3.Width = 104;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Host Name";
-            this.columnHeader4.Width = 161;
-            // 
-            // lanStartScan
-            // 
-            this.lanStartScan.Location = new System.Drawing.Point(451, 24);
-            this.lanStartScan.Name = "lanStartScan";
-            this.lanStartScan.Size = new System.Drawing.Size(75, 23);
-            this.lanStartScan.TabIndex = 5;
-            this.lanStartScan.Text = "Start Scanning";
-            this.lanStartScan.UseVisualStyleBackColor = true;
-            this.lanStartScan.Click += new System.EventHandler(this.lanStartScan_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.FROMiptextbox4);
-            this.groupBox2.Controls.Add(this.FROMiptextbox1);
-            this.groupBox2.Controls.Add(this.FROMiptextbox3);
-            this.groupBox2.Controls.Add(this.FROMiptextbox2);
-            this.groupBox2.Location = new System.Drawing.Point(105, 70);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(137, 48);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "From";
-            // 
-            // FROMiptextbox1
-            // 
-            this.FROMiptextbox1.Location = new System.Drawing.Point(6, 22);
-            this.FROMiptextbox1.Name = "FROMiptextbox1";
-            this.FROMiptextbox1.Size = new System.Drawing.Size(26, 20);
-            this.FROMiptextbox1.TabIndex = 9;
-            // 
-            // FROMiptextbox2
-            // 
-            this.FROMiptextbox2.Location = new System.Drawing.Point(38, 22);
-            this.FROMiptextbox2.Name = "FROMiptextbox2";
-            this.FROMiptextbox2.Size = new System.Drawing.Size(26, 20);
-            this.FROMiptextbox2.TabIndex = 10;
-            // 
-            // FROMiptextbox3
-            // 
-            this.FROMiptextbox3.Location = new System.Drawing.Point(70, 22);
-            this.FROMiptextbox3.Name = "FROMiptextbox3";
-            this.FROMiptextbox3.Size = new System.Drawing.Size(26, 20);
-            this.FROMiptextbox3.TabIndex = 11;
-            // 
-            // FROMiptextbox4
-            // 
-            this.FROMiptextbox4.Location = new System.Drawing.Point(102, 22);
-            this.FROMiptextbox4.Name = "FROMiptextbox4";
-            this.FROMiptextbox4.Size = new System.Drawing.Size(26, 20);
-            this.FROMiptextbox4.TabIndex = 12;
             // 
             // groupBox3
             // 
@@ -367,7 +275,7 @@
             this.groupBox3.Controls.Add(this.TOiptextbox1);
             this.groupBox3.Controls.Add(this.TOiptextbox3);
             this.groupBox3.Controls.Add(this.TOiptextbox2);
-            this.groupBox3.Location = new System.Drawing.Point(248, 70);
+            this.groupBox3.Location = new System.Drawing.Point(187, 6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(137, 48);
             this.groupBox3.TabIndex = 13;
@@ -402,14 +310,256 @@
             this.TOiptextbox2.Size = new System.Drawing.Size(26, 20);
             this.TOiptextbox2.TabIndex = 10;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.FROMiptextbox4);
+            this.groupBox2.Controls.Add(this.FROMiptextbox1);
+            this.groupBox2.Controls.Add(this.FROMiptextbox3);
+            this.groupBox2.Controls.Add(this.FROMiptextbox2);
+            this.groupBox2.Location = new System.Drawing.Point(44, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(137, 48);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "From";
+            // 
+            // FROMiptextbox4
+            // 
+            this.FROMiptextbox4.Location = new System.Drawing.Point(102, 22);
+            this.FROMiptextbox4.Name = "FROMiptextbox4";
+            this.FROMiptextbox4.Size = new System.Drawing.Size(26, 20);
+            this.FROMiptextbox4.TabIndex = 12;
+            // 
+            // FROMiptextbox1
+            // 
+            this.FROMiptextbox1.Location = new System.Drawing.Point(6, 22);
+            this.FROMiptextbox1.Name = "FROMiptextbox1";
+            this.FROMiptextbox1.Size = new System.Drawing.Size(26, 20);
+            this.FROMiptextbox1.TabIndex = 9;
+            // 
+            // FROMiptextbox3
+            // 
+            this.FROMiptextbox3.Location = new System.Drawing.Point(70, 22);
+            this.FROMiptextbox3.Name = "FROMiptextbox3";
+            this.FROMiptextbox3.Size = new System.Drawing.Size(26, 20);
+            this.FROMiptextbox3.TabIndex = 11;
+            // 
+            // FROMiptextbox2
+            // 
+            this.FROMiptextbox2.Location = new System.Drawing.Point(38, 22);
+            this.FROMiptextbox2.Name = "FROMiptextbox2";
+            this.FROMiptextbox2.Size = new System.Drawing.Size(26, 20);
+            this.FROMiptextbox2.TabIndex = 10;
+            // 
+            // lanStartScan
+            // 
+            this.lanStartScan.Location = new System.Drawing.Point(412, 6);
+            this.lanStartScan.Name = "lanStartScan";
+            this.lanStartScan.Size = new System.Drawing.Size(75, 23);
+            this.lanStartScan.TabIndex = 5;
+            this.lanStartScan.Text = "Start Scanning";
+            this.lanStartScan.UseVisualStyleBackColor = true;
+            this.lanStartScan.Click += new System.EventHandler(this.lanStartScan_Click);
+            // 
+            // lanDataViewList
+            // 
+            this.lanDataViewList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lanDataViewList.Location = new System.Drawing.Point(12, 60);
+            this.lanDataViewList.Name = "lanDataViewList";
+            this.lanDataViewList.Size = new System.Drawing.Size(773, 341);
+            this.lanDataViewList.Sorting = System.Windows.Forms.SortOrder.Descending;
+            this.lanDataViewList.TabIndex = 4;
+            this.lanDataViewList.UseCompatibleStateImageBehavior = false;
+            this.lanDataViewList.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Tag = "Domain";
+            this.columnHeader1.Text = "IP Address";
+            this.columnHeader1.Width = 67;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "MAC Address";
+            this.columnHeader2.Width = 102;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Response Time";
+            this.columnHeader3.Width = 104;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Host Name";
+            this.columnHeader4.Width = 161;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel4,
+            this.batchProgressBar});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 467);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(802, 22);
+            this.statusStrip1.TabIndex = 7;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(115, 17);
+            this.toolStripStatusLabel1.Text = "ICMP_PING Ver: 0.10";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(110, 17);
+            this.toolStripStatusLabel2.Text = "| Anthony Murphy |";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(165, 17);
+            this.toolStripStatusLabel3.Text = "https://github.com/netharion";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(91, 17);
+            this.toolStripStatusLabel4.Text = "|                          |";
+            // 
+            // batchProgressBar
+            // 
+            this.batchProgressBar.Name = "batchProgressBar";
+            this.batchProgressBar.Size = new System.Drawing.Size(300, 16);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mToolStripMenuItem,
+            this.viewToolStripMenuItem,
+            this.actionsToolStripMenuItem,
+            this.optionsToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(802, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mToolStripMenuItem
+            // 
+            this.mToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2});
+            this.mToolStripMenuItem.Name = "mToolStripMenuItem";
+            this.mToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.mToolStripMenuItem.Text = "File";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(92, 22);
+            this.toolStripMenuItem2.Text = "123";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // actionsToolStripMenuItem
+            // 
+            this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
+            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.actionsToolStripMenuItem.Text = "Actions";
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // scan_button
+            // 
+            this.scan_button.Location = new System.Drawing.Point(412, 35);
+            this.scan_button.Name = "scan_button";
+            this.scan_button.Size = new System.Drawing.Size(75, 23);
+            this.scan_button.TabIndex = 16;
+            this.scan_button.Text = "Cancel";
+            this.scan_button.UseVisualStyleBackColor = true;
+            this.scan_button.Click += new System.EventHandler(this.scan_button_Click);
+            // 
+            // LanScannerIPV4Textbox
+            // 
+            this.LanScannerIPV4Textbox.AutoSize = true;
+            this.LanScannerIPV4Textbox.Location = new System.Drawing.Point(9, 4);
+            this.LanScannerIPV4Textbox.Name = "LanScannerIPV4Textbox";
+            this.LanScannerIPV4Textbox.Size = new System.Drawing.Size(29, 13);
+            this.LanScannerIPV4Textbox.TabIndex = 17;
+            this.LanScannerIPV4Textbox.Text = "IPv4";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(791, 407);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Visual Tracert";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(791, 407);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "WoL Manager";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.checkBox1);
+            this.groupBox4.Location = new System.Drawing.Point(330, 7);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(76, 47);
+            this.groupBox4.TabIndex = 18;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Auto Scan:";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 23);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(60, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Subnet";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 475);
+            this.ClientSize = new System.Drawing.Size(802, 489);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabControl1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Netscan";
             this.groupBox1.ResumeLayout(false);
             this.batchPingGroupBox.ResumeLayout(false);
             this.batchPingGroupBox.PerformLayout();
@@ -418,11 +568,19 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.tabPage2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -440,17 +598,13 @@
         private System.Windows.Forms.ColumnHeader bufferlengthHeader;
         private System.Windows.Forms.Button batchButton;
         private System.Windows.Forms.TextBox numOfDomainsTxtBox;
-        private System.Windows.Forms.ProgressBar batchProgressBar;
         private System.Windows.Forms.GroupBox batchPingGroupBox;
         private System.Windows.Forms.Label batchPingLabel;
         private System.Windows.Forms.GroupBox singlePingGroupBox;
         private System.Windows.Forms.Label singleDomainLabel;
-        private System.Windows.Forms.Button canceAsyncPingButton;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListView lanDataViewList;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -466,6 +620,26 @@
         private System.Windows.Forms.TextBox TOiptextbox1;
         private System.Windows.Forms.TextBox TOiptextbox3;
         private System.Windows.Forms.TextBox TOiptextbox2;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripProgressBar batchProgressBar;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem actionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        public System.Windows.Forms.ListView lanDataViewList;
+        private System.Windows.Forms.Button scan_button;
+        private System.Windows.Forms.Label LanScannerIPV4Textbox;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
     }
 }
 
