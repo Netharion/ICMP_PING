@@ -11,8 +11,6 @@ Upcoming features:
 
 Image:
 <p align="center">
-  <img src="https://github.com/Netharion/ICMP_PING/blob/master/netscan.png" width="350"/>
-  <img src="your_relative_path_here_number_2_large_name" width="350"/>
+  <img src="https://github.com/Netharion/ICMP_PING/blob/master/netscan.png" width="350"/>  
 </p>
 
-[[https://github.com/Netharion/ICMP_PING/blob/master/netscan.png|alt=octocat]]
