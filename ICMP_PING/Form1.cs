@@ -12,6 +12,13 @@ using System.Threading;
 using System.Net.Sockets;
 using System.Net.NetworkInformation;
 using System.Net;
+using GMap.NET.WindowsForms;
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms.Markers;
+using GMap.NET.WindowsForms.ToolTips;
+using System.Reflection;
+
 
 
 
@@ -217,6 +224,97 @@ namespace ICMP_PING
         private void scan_button_Click(object sender, EventArgs e)
         {
             ThreadTestTwo();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+            ListViewItem tracelist = new ListViewItem();
+            tracelist.Text = "";
+
+            GMap.NET.WindowsForms.GMapOverlay markers = new GMap.NET.WindowsForms.GMapOverlay("markers");
+            GMapOverlay routes = new GMapOverlay("routes");
+            List<PointLatLng> points = new List<PointLatLng>();
+            var trace = tracert.GetTraceRoute(tracert_Textbox.Text);
+            foreach(var element in trace)
+            {
+                double lattitude;
+                double longitude;
+
+                var ipdetails = tracert.IPGEOINFO(element);
+                if(ipdetails[0] == null)
+                {
+                    continue;
+                }
+                else
+                {
+                    lattitude = Convert.ToDouble(ipdetails[0].ToString());
+                    longitude = Convert.ToDouble(ipdetails[1].ToString());
+
+                    string coordinates = (ipdetails[0].ToString()) + (",") + (ipdetails[1].ToString());
+                    
+
+                    GMap.NET.WindowsForms.GMapMarker marker = new GMap.NET.WindowsForms.Markers.GMarkerGoogle(new GMap.NET.PointLatLng(lattitude, longitude),GMap.NET.WindowsForms.Markers.GMarkerGoogleType.blue_pushpin);
+                    marker.Dispose();
+                    marker.ToolTipText = ("Loc: " + coordinates + "\n" + ipdetails[2] + "\n" + ipdetails[3] + "\n" + ipdetails[4]);
+                    marker.ToolTip.Fill = Brushes.Black;
+                    marker.ToolTip.Foreground = Brushes.White;
+                    marker.ToolTip.Stroke = Pens.Black;
+                    marker.ToolTip.TextPadding = new Size(20, 20);
+
+                    points.Add(new PointLatLng(lattitude, longitude));
+                    Console.WriteLine(ipdetails[2]);
+
+                    markers.Markers.Add(marker);
+                    gmapcontrol.Overlays.Clear();
+                    gmapcontrol.Overlays.Add(markers);
+
+                    tracelist.SubItems.Add(ipdetails[2].ToString());
+
+
+                    
+
+
+                }
+
+            }
+            try
+            {
+                GMapRoute route = new GMapRoute(points, "test");
+                routes.Routes.Add(route);
+                gmapcontrol.Overlays.Add(routes);
+            }
+            catch
+            {
+                
+            }
+            trace_listview.Items.Add(tracelist);           
+            trace_listview.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            trace_listview.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            gmapcontrol.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
+            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
+            gmapcontrol.ShowCenter = false;
+            gmapcontrol.SetPositionByKeywords("Gulf of Mexico");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GMapOverlay routes = new GMapOverlay("routes");
+            List<PointLatLng> points = new List<PointLatLng>();
+            points.Add(new PointLatLng(48.866383, 2.323575));
+            points.Add(new PointLatLng(48.863868, 2.321554));
+            points.Add(new PointLatLng(48.861017, 2.330030));
+            GMapRoute route = new GMapRoute(points, "A walk in the park");
+            route.Stroke = new Pen(Color.Blue, 10);
+            routes.Routes.Add(route);
+            gmapcontrol.Overlays.Add(routes);
         }
     }
 }

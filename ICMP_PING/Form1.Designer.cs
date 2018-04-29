@@ -47,6 +47,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.LanScannerIPV4Textbox = new System.Windows.Forms.Label();
+            this.scan_button = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.TOiptextbox4 = new System.Windows.Forms.TextBox();
             this.TOiptextbox1 = new System.Windows.Forms.TextBox();
@@ -63,6 +67,8 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -76,23 +82,35 @@
             this.actionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.scan_button = new System.Windows.Forms.Button();
-            this.LanScannerIPV4Textbox = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.tracert_button = new System.Windows.Forms.Button();
+            this.gmapcontrol = new GMap.NET.WindowsForms.GMapControl();
+            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tracert_Textbox = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.trace_listview = new System.Windows.Forms.ListView();
+            this.tracert_list_resolvedIP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.batchPingGroupBox.SuspendLayout();
             this.singlePingGroupBox.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // connectButton
@@ -269,6 +287,45 @@
             this.tabPage2.Text = "LAN Scanner";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.checkBox1);
+            this.groupBox4.Location = new System.Drawing.Point(330, 7);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(76, 47);
+            this.groupBox4.TabIndex = 18;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Auto Scan:";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 23);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(60, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Subnet";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // LanScannerIPV4Textbox
+            // 
+            this.LanScannerIPV4Textbox.AutoSize = true;
+            this.LanScannerIPV4Textbox.Location = new System.Drawing.Point(9, 4);
+            this.LanScannerIPV4Textbox.Name = "LanScannerIPV4Textbox";
+            this.LanScannerIPV4Textbox.Size = new System.Drawing.Size(29, 13);
+            this.LanScannerIPV4Textbox.TabIndex = 17;
+            this.LanScannerIPV4Textbox.Text = "IPv4";
+            // 
+            // scan_button
+            // 
+            this.scan_button.Location = new System.Drawing.Point(412, 35);
+            this.scan_button.Name = "scan_button";
+            this.scan_button.Size = new System.Drawing.Size(75, 23);
+            this.scan_button.TabIndex = 16;
+            this.scan_button.Text = "Cancel";
+            this.scan_button.UseVisualStyleBackColor = true;
+            this.scan_button.Click += new System.EventHandler(this.scan_button_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.TOiptextbox4);
@@ -397,6 +454,28 @@
             this.columnHeader4.Text = "Host Name";
             this.columnHeader4.Width = 161;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.trace_listview);
+            this.tabPage3.Controls.Add(this.groupBox6);
+            this.tabPage3.Controls.Add(this.groupBox5);
+            this.tabPage3.Controls.Add(this.gmapcontrol);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(791, 407);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Visual Tracert";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(791, 407);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "WoL Manager";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -414,8 +493,8 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(115, 17);
-            this.toolStripStatusLabel1.Text = "ICMP_PING Ver: 0.10";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(114, 17);
+            this.toolStripStatusLabel1.Text = "ICMP_PING Ver: 0.15";
             // 
             // toolStripStatusLabel2
             // 
@@ -492,62 +571,145 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // scan_button
+            // tracert_button
             // 
-            this.scan_button.Location = new System.Drawing.Point(412, 35);
-            this.scan_button.Name = "scan_button";
-            this.scan_button.Size = new System.Drawing.Size(75, 23);
-            this.scan_button.TabIndex = 16;
-            this.scan_button.Text = "Cancel";
-            this.scan_button.UseVisualStyleBackColor = true;
-            this.scan_button.Click += new System.EventHandler(this.scan_button_Click);
+            this.tracert_button.Location = new System.Drawing.Point(13, 46);
+            this.tracert_button.Name = "tracert_button";
+            this.tracert_button.Size = new System.Drawing.Size(75, 23);
+            this.tracert_button.TabIndex = 0;
+            this.tracert_button.Text = "Trace Route";
+            this.tracert_button.UseVisualStyleBackColor = true;
+            this.tracert_button.Click += new System.EventHandler(this.button1_Click);
             // 
-            // LanScannerIPV4Textbox
+            // gmapcontrol
             // 
-            this.LanScannerIPV4Textbox.AutoSize = true;
-            this.LanScannerIPV4Textbox.Location = new System.Drawing.Point(9, 4);
-            this.LanScannerIPV4Textbox.Name = "LanScannerIPV4Textbox";
-            this.LanScannerIPV4Textbox.Size = new System.Drawing.Size(29, 13);
-            this.LanScannerIPV4Textbox.TabIndex = 17;
-            this.LanScannerIPV4Textbox.Text = "IPv4";
+            this.gmapcontrol.Bearing = 0F;
+            this.gmapcontrol.CanDragMap = true;
+            this.gmapcontrol.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gmapcontrol.GrayScaleMode = false;
+            this.gmapcontrol.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gmapcontrol.LevelsKeepInMemmory = 5;
+            this.gmapcontrol.Location = new System.Drawing.Point(3, 3);
+            this.gmapcontrol.MarkersEnabled = true;
+            this.gmapcontrol.MaxZoom = 18;
+            this.gmapcontrol.MinZoom = 2;
+            this.gmapcontrol.MouseWheelZoomEnabled = true;
+            this.gmapcontrol.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gmapcontrol.Name = "gmapcontrol";
+            this.gmapcontrol.NegativeMode = false;
+            this.gmapcontrol.PolygonsEnabled = true;
+            this.gmapcontrol.RetryLoadTile = 0;
+            this.gmapcontrol.RoutesEnabled = true;
+            this.gmapcontrol.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gmapcontrol.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gmapcontrol.ShowTileGridLines = false;
+            this.gmapcontrol.Size = new System.Drawing.Size(588, 401);
+            this.gmapcontrol.TabIndex = 1;
+            this.gmapcontrol.Zoom = 2D;
             // 
-            // tabPage3
+            // button2
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(791, 407);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Visual Tracert";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(94, 46);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // tabPage4
+            // groupBox5
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(791, 407);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "WoL Manager";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.groupBox5.Controls.Add(this.tracert_Textbox);
+            this.groupBox5.Controls.Add(this.button2);
+            this.groupBox5.Controls.Add(this.tracert_button);
+            this.groupBox5.Location = new System.Drawing.Point(598, 4);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(190, 74);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Trace Route";
             // 
-            // groupBox4
+            // tracert_Textbox
             // 
-            this.groupBox4.Controls.Add(this.checkBox1);
-            this.groupBox4.Location = new System.Drawing.Point(330, 7);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(76, 47);
-            this.groupBox4.TabIndex = 18;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Auto Scan:";
+            this.tracert_Textbox.Location = new System.Drawing.Point(13, 20);
+            this.tracert_Textbox.Name = "tracert_Textbox";
+            this.tracert_Textbox.Size = new System.Drawing.Size(165, 20);
+            this.tracert_Textbox.TabIndex = 0;
             // 
-            // checkBox1
+            // groupBox6
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 23);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(60, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Subnet";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.groupBox6.Controls.Add(this.groupBox8);
+            this.groupBox6.Controls.Add(this.groupBox7);
+            this.groupBox6.Location = new System.Drawing.Point(598, 84);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(190, 146);
+            this.groupBox6.TabIndex = 4;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Map Controls";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "-";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(87, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "+";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.button3);
+            this.groupBox7.Controls.Add(this.button1);
+            this.groupBox7.Location = new System.Drawing.Point(7, 20);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(177, 48);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Zoom";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.comboBox1);
+            this.groupBox8.Location = new System.Drawing.Point(7, 75);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(177, 53);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Map provider";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AllowDrop = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(7, 20);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(155, 21);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.Text = "Google Maps";
+            // 
+            // trace_listview
+            // 
+            this.trace_listview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.trace_listview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.tracert_list_resolvedIP});
+            this.trace_listview.Location = new System.Drawing.Point(598, 237);
+            this.trace_listview.Name = "trace_listview";
+            this.trace_listview.Size = new System.Drawing.Size(190, 167);
+            this.trace_listview.TabIndex = 5;
+            this.trace_listview.UseCompatibleStateImageBehavior = false;
+            // 
+            // tracert_list_resolvedIP
+            // 
+            this.tracert_list_resolvedIP.Text = "Traced IPs";
             // 
             // Form1
             // 
@@ -560,6 +722,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Netscan";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.batchPingGroupBox.ResumeLayout(false);
             this.batchPingGroupBox.PerformLayout();
@@ -569,16 +732,22 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -640,6 +809,19 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button tracert_button;
+        private GMap.NET.WindowsForms.GMapControl gmapcontrol;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox tracert_Textbox;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListView trace_listview;
+        private System.Windows.Forms.ColumnHeader tracert_list_resolvedIP;
     }
 }
 
