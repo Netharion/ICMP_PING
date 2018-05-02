@@ -68,6 +68,16 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.traceroute_button = new System.Windows.Forms.Button();
+            this.tracert_Textbox = new System.Windows.Forms.TextBox();
+            this.gmapcontrol = new GMap.NET.WindowsForms.GMapControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -82,19 +92,9 @@
             this.actionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tracert_button = new System.Windows.Forms.Button();
-            this.gmapcontrol = new GMap.NET.WindowsForms.GMapControl();
+            this.sourceLabel = new System.Windows.Forms.Label();
+            this.source_combobox = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.tracert_Textbox = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.trace_listview = new System.Windows.Forms.ListView();
-            this.tracert_list_resolvedIP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.batchPingGroupBox.SuspendLayout();
             this.singlePingGroupBox.SuspendLayout();
@@ -105,12 +105,12 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // connectButton
@@ -143,12 +143,15 @@
             // 
             // batchPingGroupBox
             // 
+            this.batchPingGroupBox.Controls.Add(this.button2);
+            this.batchPingGroupBox.Controls.Add(this.source_combobox);
+            this.batchPingGroupBox.Controls.Add(this.sourceLabel);
             this.batchPingGroupBox.Controls.Add(this.batchPingLabel);
             this.batchPingGroupBox.Controls.Add(this.batchButton);
             this.batchPingGroupBox.Controls.Add(this.numOfDomainsTxtBox);
             this.batchPingGroupBox.Location = new System.Drawing.Point(7, 126);
             this.batchPingGroupBox.Name = "batchPingGroupBox";
-            this.batchPingGroupBox.Size = new System.Drawing.Size(162, 126);
+            this.batchPingGroupBox.Size = new System.Drawing.Size(162, 220);
             this.batchPingGroupBox.TabIndex = 7;
             this.batchPingGroupBox.TabStop = false;
             // 
@@ -162,7 +165,7 @@
             // 
             // batchButton
             // 
-            this.batchButton.Location = new System.Drawing.Point(35, 84);
+            this.batchButton.Location = new System.Drawing.Point(6, 113);
             this.batchButton.Name = "batchButton";
             this.batchButton.Size = new System.Drawing.Size(75, 23);
             this.batchButton.TabIndex = 4;
@@ -456,7 +459,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.trace_listview);
             this.tabPage3.Controls.Add(this.groupBox6);
             this.tabPage3.Controls.Add(this.groupBox5);
             this.tabPage3.Controls.Add(this.gmapcontrol);
@@ -466,6 +468,120 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Visual Tracert";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.groupBox8);
+            this.groupBox6.Controls.Add(this.groupBox7);
+            this.groupBox6.Location = new System.Drawing.Point(598, 84);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(190, 146);
+            this.groupBox6.TabIndex = 4;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Map Controls";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.comboBox1);
+            this.groupBox8.Location = new System.Drawing.Point(7, 75);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(177, 53);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Map provider";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AllowDrop = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(7, 20);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(155, 21);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.Text = "Google Maps";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.button3);
+            this.groupBox7.Controls.Add(this.button1);
+            this.groupBox7.Location = new System.Drawing.Point(7, 20);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(177, 48);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Zoom";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(87, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "+";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "-";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.traceroute_button);
+            this.groupBox5.Controls.Add(this.tracert_Textbox);
+            this.groupBox5.Location = new System.Drawing.Point(598, 4);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(190, 74);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Trace Route";
+            // 
+            // traceroute_button
+            // 
+            this.traceroute_button.Location = new System.Drawing.Point(7, 45);
+            this.traceroute_button.Name = "traceroute_button";
+            this.traceroute_button.Size = new System.Drawing.Size(75, 23);
+            this.traceroute_button.TabIndex = 5;
+            this.traceroute_button.Text = "Trace Route";
+            this.traceroute_button.UseVisualStyleBackColor = true;
+            this.traceroute_button.Click += new System.EventHandler(this.traceroute_button_Click);
+            // 
+            // tracert_Textbox
+            // 
+            this.tracert_Textbox.Location = new System.Drawing.Point(13, 20);
+            this.tracert_Textbox.Name = "tracert_Textbox";
+            this.tracert_Textbox.Size = new System.Drawing.Size(165, 20);
+            this.tracert_Textbox.TabIndex = 0;
+            // 
+            // gmapcontrol
+            // 
+            this.gmapcontrol.Bearing = 0F;
+            this.gmapcontrol.CanDragMap = true;
+            this.gmapcontrol.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gmapcontrol.GrayScaleMode = false;
+            this.gmapcontrol.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gmapcontrol.LevelsKeepInMemmory = 5;
+            this.gmapcontrol.Location = new System.Drawing.Point(3, 3);
+            this.gmapcontrol.MarkersEnabled = true;
+            this.gmapcontrol.MaxZoom = 18;
+            this.gmapcontrol.MinZoom = 2;
+            this.gmapcontrol.MouseWheelZoomEnabled = true;
+            this.gmapcontrol.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gmapcontrol.Name = "gmapcontrol";
+            this.gmapcontrol.NegativeMode = false;
+            this.gmapcontrol.PolygonsEnabled = true;
+            this.gmapcontrol.RetryLoadTile = 0;
+            this.gmapcontrol.RoutesEnabled = true;
+            this.gmapcontrol.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gmapcontrol.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gmapcontrol.ShowTileGridLines = false;
+            this.gmapcontrol.Size = new System.Drawing.Size(588, 401);
+            this.gmapcontrol.TabIndex = 1;
+            this.gmapcontrol.Zoom = 2D;
             // 
             // tabPage4
             // 
@@ -571,145 +687,34 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // tracert_button
+            // sourceLabel
             // 
-            this.tracert_button.Location = new System.Drawing.Point(13, 46);
-            this.tracert_button.Name = "tracert_button";
-            this.tracert_button.Size = new System.Drawing.Size(75, 23);
-            this.tracert_button.TabIndex = 0;
-            this.tracert_button.Text = "Trace Route";
-            this.tracert_button.UseVisualStyleBackColor = true;
-            this.tracert_button.Click += new System.EventHandler(this.button1_Click);
+            this.sourceLabel.AutoSize = true;
+            this.sourceLabel.Location = new System.Drawing.Point(6, 89);
+            this.sourceLabel.Name = "sourceLabel";
+            this.sourceLabel.Size = new System.Drawing.Size(44, 13);
+            this.sourceLabel.TabIndex = 6;
+            this.sourceLabel.Text = "Source:";
             // 
-            // gmapcontrol
+            // source_combobox
             // 
-            this.gmapcontrol.Bearing = 0F;
-            this.gmapcontrol.CanDragMap = true;
-            this.gmapcontrol.EmptyTileColor = System.Drawing.Color.Navy;
-            this.gmapcontrol.GrayScaleMode = false;
-            this.gmapcontrol.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            this.gmapcontrol.LevelsKeepInMemmory = 5;
-            this.gmapcontrol.Location = new System.Drawing.Point(3, 3);
-            this.gmapcontrol.MarkersEnabled = true;
-            this.gmapcontrol.MaxZoom = 18;
-            this.gmapcontrol.MinZoom = 2;
-            this.gmapcontrol.MouseWheelZoomEnabled = true;
-            this.gmapcontrol.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
-            this.gmapcontrol.Name = "gmapcontrol";
-            this.gmapcontrol.NegativeMode = false;
-            this.gmapcontrol.PolygonsEnabled = true;
-            this.gmapcontrol.RetryLoadTile = 0;
-            this.gmapcontrol.RoutesEnabled = true;
-            this.gmapcontrol.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
-            this.gmapcontrol.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
-            this.gmapcontrol.ShowTileGridLines = false;
-            this.gmapcontrol.Size = new System.Drawing.Size(588, 401);
-            this.gmapcontrol.TabIndex = 1;
-            this.gmapcontrol.Zoom = 2D;
+            this.source_combobox.FormattingEnabled = true;
+            this.source_combobox.Items.AddRange(new object[] {
+            "Moz.com - Top 500"});
+            this.source_combobox.Location = new System.Drawing.Point(56, 86);
+            this.source_combobox.Name = "source_combobox";
+            this.source_combobox.Size = new System.Drawing.Size(99, 21);
+            this.source_combobox.TabIndex = 7;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(94, 46);
+            this.button2.Location = new System.Drawing.Point(35, 183);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Cancel";
+            this.button2.TabIndex = 8;
+            this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.tracert_Textbox);
-            this.groupBox5.Controls.Add(this.button2);
-            this.groupBox5.Controls.Add(this.tracert_button);
-            this.groupBox5.Location = new System.Drawing.Point(598, 4);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(190, 74);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Trace Route";
-            // 
-            // tracert_Textbox
-            // 
-            this.tracert_Textbox.Location = new System.Drawing.Point(13, 20);
-            this.tracert_Textbox.Name = "tracert_Textbox";
-            this.tracert_Textbox.Size = new System.Drawing.Size(165, 20);
-            this.tracert_Textbox.TabIndex = 0;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.groupBox8);
-            this.groupBox6.Controls.Add(this.groupBox7);
-            this.groupBox6.Location = new System.Drawing.Point(598, 84);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(190, 146);
-            this.groupBox6.TabIndex = 4;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Map Controls";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "-";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(87, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "+";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.button3);
-            this.groupBox7.Controls.Add(this.button1);
-            this.groupBox7.Location = new System.Drawing.Point(7, 20);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(177, 48);
-            this.groupBox7.TabIndex = 0;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Zoom";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.comboBox1);
-            this.groupBox8.Location = new System.Drawing.Point(7, 75);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(177, 53);
-            this.groupBox8.TabIndex = 1;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Map provider";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AllowDrop = true;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(7, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(155, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "Google Maps";
-            // 
-            // trace_listview
-            // 
-            this.trace_listview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.trace_listview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.tracert_list_resolvedIP});
-            this.trace_listview.Location = new System.Drawing.Point(598, 237);
-            this.trace_listview.Name = "trace_listview";
-            this.trace_listview.Size = new System.Drawing.Size(190, 167);
-            this.trace_listview.TabIndex = 5;
-            this.trace_listview.UseCompatibleStateImageBehavior = false;
-            // 
-            // tracert_list_resolvedIP
-            // 
-            this.tracert_list_resolvedIP.Text = "Traced IPs";
             // 
             // Form1
             // 
@@ -739,15 +744,15 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -809,9 +814,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button tracert_button;
         private GMap.NET.WindowsForms.GMapControl gmapcontrol;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox tracert_Textbox;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -820,8 +823,10 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListView trace_listview;
-        private System.Windows.Forms.ColumnHeader tracert_list_resolvedIP;
+        private System.Windows.Forms.Button traceroute_button;
+        private System.Windows.Forms.ComboBox source_combobox;
+        private System.Windows.Forms.Label sourceLabel;
+        private System.Windows.Forms.Button button2;
     }
 }
 
