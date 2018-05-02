@@ -43,8 +43,7 @@ namespace ICMP_PING
                                 parsedString.Append(element);
                             }                    
 
-                        }
-                        Console.WriteLine(count);
+                        }                        
                         domainlist[count] += parsedString.ToString();
                         count++;
                     }

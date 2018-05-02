@@ -4,6 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GMap.NET.WindowsForms;
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms.Markers;
+using GMap.NET.WindowsForms.ToolTips;
 
 namespace ICMP_PING
 {
@@ -29,6 +34,7 @@ namespace ICMP_PING
 
         delegate void SetListItemCallBack(Form1 f, ListView ctrl, ListViewItem list);
         delegate void UpdateProgressBarCallBack(Form1 f, ToolStripProgressBar ctrl, int value);
+        delegate void SetGmapCallBack(Form1 f, GMapControl ctrl, int value);
 
 
         public static void SetText(Form1 form, Control ctrl, string text)
@@ -121,6 +127,20 @@ namespace ICMP_PING
             {
                 ctrl.Maximum = value;
             }
+        }
+        public static void SetGmapZoom(Form1 form, GMapControl ctrl, int value)
+        {
+            if (ctrl.InvokeRequired)
+            {
+                SetGmapCallBack d = new SetGmapCallBack(SetGmapZoom);
+                form.Invoke(d, new object[] { form, ctrl, value });
+            }
+            else
+            {
+                ctrl.Zoom = value;
+
+            }
+
         }
 
 

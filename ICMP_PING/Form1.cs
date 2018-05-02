@@ -58,6 +58,15 @@ namespace ICMP_PING
             
             int numOfDomains = Convert.ToInt32(numOfDomainsTxtBox.Text);
             var domains = DomainLists.moztop();
+            int domainscount = domains.Count();
+
+            if (numOfDomains > domainscount)
+            {
+                numOfDomains = domainscount;
+            }
+
+            Console.WriteLine("num of domains is now" + numOfDomains.ToString());
+
             batchProgressBar.Minimum = 0;
             batchProgressBar.Maximum = numOfDomains;
             batchProgressBar.Value = 0;
@@ -173,10 +182,16 @@ namespace ICMP_PING
         }
         private void MapTraceroute(string domain)
         {
+            ThreadHelper.SetGmapZoom(this, gmapcontrol, 2);
             GMap.NET.WindowsForms.GMapOverlay markers = new GMap.NET.WindowsForms.GMapOverlay("markers");
             GMapOverlay routes = new GMapOverlay("routes");
             List<PointLatLng> points = new List<PointLatLng>();
+            ThreadHelper.SetText(this, trace_status_label, "tracing");
+            
+            
+            trace_status_label.BackColor = Color.Yellow;
             var trace = tracert.GetTraceRoute(tracert_Textbox.Text);
+            ThreadHelper.SetText(this, trace_status_label, "done...mapping points");
             foreach (var element in trace)
             {
                 double lattitude;
@@ -204,7 +219,6 @@ namespace ICMP_PING
                     marker.ToolTip.TextPadding = new Size(20, 20);
 
                     points.Add(new PointLatLng(lattitude, longitude));
-                    Console.WriteLine(ipdetails[2]);
 
                     markers.Markers.Add(marker);
                     gmapcontrol.Overlays.Clear();
@@ -216,37 +230,20 @@ namespace ICMP_PING
             {
                 GMapRoute route = new GMapRoute(points, "test");
                 routes.Routes.Add(route);
+                ThreadHelper.SetText(this, trace_status_label, "adding routes...");
                 gmapcontrol.Overlays.Add(routes);
+                
             }
             catch
             {
 
             }
-
+            ThreadHelper.SetGmapZoom(this, gmapcontrol, 3);
+            ThreadHelper.SetText(this, trace_status_label, "idle");
+            trace_status_label.BackColor = Color.Silver;
         }
 
-        private void ThreadTest()
-        {
-            var thread1 = new Thread(
-                () => LanScan("192.168.0.1"));
-            var thread2 = new Thread(
-                () => LanScan("192.168.0.5"));
-            var thread3 = new Thread(
-                () => LanScan("192.168.0.8"));
-            var thread4 = new Thread(
-                () => LanScan("192.168.0.24"));
-            var thread5 = new Thread(
-                () => LanScan("192.168.0.110"));
 
-
-
-            thread1.Start();
-            thread2.Start();
-            thread3.Start();
-            thread4.Start();
-            thread5.Start();
-
-        }
         private void ThreadTestTwo()
         {
             ThreadHelper.SetListClear(this, lanDataViewList);
@@ -283,7 +280,8 @@ namespace ICMP_PING
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            gmapcontrol.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
+            //gmapcontrol.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
+            gmapcontrol.MapProvider = GMap.NET.MapProviders.GoogleSatelliteMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
             gmapcontrol.ShowCenter = false;
             gmapcontrol.SetPositionByKeywords("Gulf of Mexico");
@@ -302,9 +300,46 @@ namespace ICMP_PING
 
         private void button2_Click(object sender, EventArgs e)
         {
-            char badchar = ('\x005c');
-            Console.WriteLine(badchar);
-            //DomainLists.moztop500();
+            var domains = DomainLists.moztop();
+            Console.WriteLine(domains.Count());
+        }
+
+        private void gmap_zoom_plus_Click(object sender, EventArgs e)
+        {
+            gmapcontrol.Zoom = (gmapcontrol.Zoom) + 1;
+        }
+
+        private void gmap_zoom_minus_Click(object sender, EventArgs e)
+        {
+            gmapcontrol.Zoom = (gmapcontrol.Zoom) - 1;
+        }
+
+        private void set_mapprovider_button_Click(object sender, EventArgs e)
+        {
+            var SelectedMap = map_providers_combobox.Text;
+
+            switch (SelectedMap)
+            {
+                case "Google Maps":
+                    gmapcontrol.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
+                    break;
+                case "Google Maps Satellite":
+                    gmapcontrol.MapProvider = GMap.NET.MapProviders.GoogleSatelliteMapProvider.Instance;
+                    break;
+                case "Bing":
+                    gmapcontrol.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
+                    break;
+                case "Bing Satellite":
+                    gmapcontrol.MapProvider = GMap.NET.MapProviders.BingSatelliteMapProvider.Instance;
+                    break;
+                case "Open Street Map":
+                    gmapcontrol.MapProvider = GMap.NET.MapProviders.OpenStreetMapProvider.Instance;
+                    break;
+                default:
+                    gmapcontrol.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
+                    break;
+            }
+
         }
     }
 }
